@@ -1,4 +1,5 @@
 const router  = require("express").Router()
+const placeRouter = require('./place')
 
 router.get('/', (req,res) => {
     res.status(200).json({
@@ -7,6 +8,8 @@ router.get('/', (req,res) => {
         version: '1.0.0'
     })
 })
+
+router.use('/place', placeRouter)
 
 
 
