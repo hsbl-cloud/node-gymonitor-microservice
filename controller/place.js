@@ -67,6 +67,7 @@ async function updatePlace(req,res,next) {
         let payload = { name, detail }
         let data = await placeService.updatePlace(payload, id , transaction)
 
+        transaction.commit()
         return res.status(200).json({
             status : 200, 
             msg : 'Success update data with id ' + id,
